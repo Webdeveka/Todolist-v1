@@ -4,22 +4,30 @@ const bodyParser = require("body-parser");
 const app = express();
 const items = ["Buy Food", "Cook Food"];
 const workItems = [];
-app.set('view engine', 'ejs'); 
+const date = require(__dirname + "/date.js");
 
-app.use(bodyParser.urlencoded({extended: true}));
-app.use(express.static("public"));
+app.set('view engine', 'ejs');                      // подключение модуля
+app.use(bodyParser.urlencoded({extended: true}));   // подключение модуля
+app.use(express.static("public"));                  // подключение модуля
 
 // основная страница
 app.get("/", (req, res) => {
+    // let today = new Date();
+    // let options = {
+    //     weekday: "long",
+    //     year: 'numeric',
+    //     day: "numeric",
+    //     month: "numeric"
+    // };
+    // let day = today.toLocaleDateString("en-GB", options);
+    // строки выше перенесены в файл getDate
 
-    let today = new Date();
-    let options = {
-        weekday: "long",
-        day: "numeric",
-        month: "long"
-    };
-    let day = today.toLocaleDateString("en-GB", options);
+    let day = date.getDate();
+    //console.log(day);
+    // передаем переменную listTitle со значением day
     res.render("list", {listTitle: day, newListItems: items});
+    // отрисовывает страницу с именем index, и это будет страница index.ejs.
+    // передаваемый файл должен находится в папке views
 });
 
 app.post("/", function(req, res) {

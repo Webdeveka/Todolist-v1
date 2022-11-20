@@ -3,11 +3,26 @@ html {
   background-image: -webkit-linear-gradient(60deg, #A683E3 50%, #E4E9FD 50%);
   min-height: 1000px;
   font-family: 'helvetica neue';
+  margin: 0;
+  padding: 0;
 }
 
 h1 {
   color: #fff;
   padding: 10px;
+}
+/* my style */
+.header {
+  background: white;
+  color:#A683E3;
+  width: 50vw;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* my style */
+h2 {
+  margin: 0;
 }
 
 .box {
@@ -49,6 +64,10 @@ input[type="checkbox"] {
   font-size: 20px;
   font-weight: 200;
   color: #A683E3;
+}
+
+.note {
+  text-align: center;
 }
 
 form {

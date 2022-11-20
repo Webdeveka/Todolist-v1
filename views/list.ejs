@@ -1,14 +1,15 @@
 <%- include("header") -%>
 
 <div class="box" id="heading">
-    <h1> <%= listTitle %> </h1>
+    <h1>Today is <%= listTitle %> </h1>
 </div>
 
 <div class="box">
+    <p class="p note">You can write a to-do list fo today</p>
     <% for (let i=0; i < newListItems.length; i++) { %>
         <div class="item">
             <input type="checkbox">
-            <p><%= newListItems[i] %></p>
+            <p class="p"><%= newListItems[i] %></p>
         </div>
     <% } %>
 
